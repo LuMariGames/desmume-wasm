@@ -399,7 +399,7 @@ function emuRunFrame() {
 
 
 function wasmReady() {
-    Module._setSampleRate(47856)
+    Module._setSampleRate(48000)
     setTimeout(() => {
         if ($id('loading').hidden == true) {
             return;
