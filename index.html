@@ -127,17 +127,19 @@
         </div>
 
     </div>
-    <div id="vk-layer" hidden>
-        <div class="vk-rect vk" data-k="menu" id="vk-menu">Menu</div>
-        <div class="vk-rect vk" data-k="l">L</div>
-        <div class="vk-rect vk" data-k="r">R</div>
-        <div class="vk-round vk" data-k="a">A</div>
-        <div class="vk-round vk" data-k="b">B</div>
-        <div class="vk-round vk" data-k="x">X</div>
-        <div class="vk-round vk" data-k="y">Y</div>
-        <div class="vk-rect vk" data-k="select">-</div>
-        <div class="vk-rect vk" data-k="start">+</div>
-        <div class="vk-round vk" data-k="stick" id="vk-stick"></div>
+    <div id="vk-layer" hidden="">
+        <div class="vk-rect vk" data-k="menu" id="vk-menu" style="top: 426px; left: 422.78px; width: 48.44px; height: 48.44px; font-size: 60.55px; line-height: 48.44px;">M</div>
+        <div class="vk-rect vk" data-k="l" style="top: 426px; left: 0px; width: 181.65px; height: 72.66px; font-size: 60.55px; line-height: 72.66px;">L</div>
+        <div class="vk-rect vk" data-k="r" style="top: 426px; left: 712.35px; width: 181.65px; height: 72.66px; font-size: 60.55px; line-height: 72.66px;">R</div>
+        <div class="vk-round vk" data-k="a" style="top: 622.182px; left: 772.9px; width: 121.1px; height: 121.1px; font-size: 60.55px; line-height: 121.1px;">A</div>
+        <div class="vk-round vk" data-k="b" style="top: 743.282px; left: 651.8px; width: 121.1px; height: 121.1px; font-size: 60.55px; line-height: 121.1px;">B</div>
+        <div class="vk-round vk" data-k="x" style="top: 501.082px; left: 651.8px; width: 121.1px; height: 121.1px; font-size: 60.55px; line-height: 121.1px;">X</div>
+        <div class="vk-round vk" data-k="y" style="top: 622.182px; left: 530.7px; width: 121.1px; height: 121.1px; font-size: 60.55px; line-height: 121.1px;">Y</div>
+        <div class="vk-rect vk" data-k="select" style="top: 815.942px; left: 374.34px; width: 48.44px; height: 48.44px; font-size: 24.22px; line-height: 48.44px;">SE</div>
+        <div class="vk-rect vk" data-k="start" style="top: 815.942px; left: 471.22px; width: 48.44px; height: 48.44px; font-size: 24.22px; line-height: 48.44px;">ST</div>
+        <div class="vk-round vk" data-k="stick" id="vk-stick" style="top: 622.182px; left: 121.1px; width: 121.1px; height: 121.1px; font-size: 60.55px; line-height: 121.1px;"></div>
+        <div id="vk-dpad-1" class="vk vk-round-rect" style="display: none;"></div>
+        <div id="vk-dpad-2" class="vk vk-round-rect" style="display: none;"></div>
     </div>
     <div style="z-index: 2;position: absolute;bottom: 20px;" id="fps"></div>
     <div id="msg-layer" hidden>
@@ -342,7 +344,7 @@
             ctx2d[1].putImageData(FB[1], 0, 0)
             if (audioWorkletNode) {
                 try {
-                    var samplesRead = Module._fillAudioBuffer(4096)
+                    var samplesRead = Module._fillAudioBuffer(4000)
                     tmpAudioBuffer.set(audioBuffer.subarray(0, samplesRead * 2))
                     audioWorkletNode.port.postMessage(tmpAudioBuffer.subarray(0, samplesRead * 2))
                 } catch (error) {
@@ -364,7 +366,7 @@
         }
 
         function wasmReady() {
-            Module._setSampleRate(32000)
+            Module._setSampleRate(48000)
             $id('loading').hidden = true
             $id('loadrom').hidden = false
         }
