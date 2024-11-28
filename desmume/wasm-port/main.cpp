@@ -32,7 +32,7 @@ int bb(int a0, int a1, int a2, int a3) {
 }
 
 
-int DESMUME_SAMPLE_RATE = 48000;
+int DESMUME_SAMPLE_RATE = 32000;
 extern double samples_per_hline;
 
 EMUFILE_MEMORY *savFile = new EMUFILE_MEMORY();
@@ -42,7 +42,7 @@ int romLen;
 volatile bool execute = true;
 volatile bool paused = false;
 // static s16 samplesBuffer[16384 * 2];
-static s16 audioBuffer[16384 * 2];
+static s16 audioBuffer[8192 * 2];
 int samplesRead = 0;
 int samplesDesired = 0;
 
