@@ -1168,7 +1168,7 @@ if (location.origin == 'https://lumarigames.github.io/desmume-wasm/') {
     if (isSaveSupported) {
         // Register Service Worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(function (reg) {
+            navigator.serviceWorker.register('https://lumarigames.github.io/desmume-wasm/sw.js').then(function (reg) {
                 // registration worked
                 console.log('Registration succeeded. Scope is ' + reg.scope);
             }).catch(function (error) {
