@@ -1164,7 +1164,7 @@ function isScreenLandscape() {
 
 
 
-if (location.origin == 'https://ds.44670.org') {
+if (location.origin == 'https://lumarigames.github.io/desmume-wasm/') {
     if (isSaveSupported) {
         // Register Service Worker
         if ('serviceWorker' in navigator) {
