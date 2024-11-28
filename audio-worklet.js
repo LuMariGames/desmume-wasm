@@ -1,7 +1,7 @@
 class MyAudioWorklet extends AudioWorkletProcessor {
     constructor() {
         super()
-        this.FIFO_CAP = 5000
+        this.FIFO_CAP = 8192
         this.fifo0 = new Int16Array(this.FIFO_CAP)
         this.fifo1 = new Int16Array(this.FIFO_CAP)
         this.fifoHead = 0
